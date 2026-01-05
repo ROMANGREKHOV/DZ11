@@ -33,17 +33,17 @@ int** create_two_dim_array(int rows, int cols)
 
 void fill_two_dim_array(int** arr, int rows, int cols)
 {
-	for (int k = 1; k <= cols; ++k)
+	for (int k = 0; k < cols; ++k)
 	{
-		arr[0][k] = k;
+		arr[0][k] = k+1;
 	}
-	for (int k = 1; k <= rows; ++k)
+	for (int k = 0; k < rows; ++k)
 	{
-		arr[0][k] = k;
+		arr[k][0] = k+1;
 	}
-	for (int i = 1; i <= rows; ++i)
+	for (int i = 0; i < rows; ++i)
 	{
-		for (int j = 1; j <= cols; ++j)
+		for (int j = 1; j < cols; ++j)
 		{
 			arr[i][j] = arr[0][j] * arr[i][0];
 		}
@@ -52,11 +52,11 @@ void fill_two_dim_array(int** arr, int rows, int cols)
 
 void print_two_dim_array(int** arr, int rows, int cols)
 {
-	for (int i = 0; i <= rows; ++i)
+	for (int i = 0; i < rows; ++i)
 	{
-		for (int j = 0; j <= cols; ++j)
+		for (int j = 0; j < cols; ++j)
 		{
-			std::cout << arr[i][j];
+			std::cout << arr[i][j] << '\t';
 		}
 		std::cout << '\n';
 	}
